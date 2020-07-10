@@ -29,9 +29,9 @@ static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
-	[SchemeHid]  = { col_cyan,  col_gray1, col_gray2  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2   },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_border  },
+	[SchemeHid]  = { col_cyan,  col_gray1, col_border  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -90,21 +90,13 @@ static const char *downvol[] = { "/home/xm/scripts/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/home/xm/scripts/vol-toggle.sh",  NULL };
 
 static const char *wpcmd[]  = { "/home/xm/scripts/wp-change.sh", NULL };
-static const char *sktogglecmd[]  = { "/home/xm/scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-//static const char *setqwertycmd[]  = { "/home/xm/scripts/setxmodmap-qwerty.sh", NULL };
-//static const char *setcolemakcmd[]  = { "/home/xm/scripts/setxmodmap-colemak.sh", NULL };
-
 static const char *suspendcmd[]  = { "/home/xm/scripts/suspend.sh", NULL };
-
-//static const char *screenlockcmd[]  = { "/home/xm/scripts/screenlock.sh", NULL};
 
 static const char *incbacklightcmd[]  = { "/home/xm/scripts/inc-backlight.sh", NULL};
 static const char *decbacklightcmd[]  = { "/home/xm/scripts/dec-backlight.sh", NULL};
-
-//static const char *kctogglecmd[]  = { "/home/xm/scripts/kc-tog.sh", NULL};
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
