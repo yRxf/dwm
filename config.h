@@ -30,8 +30,8 @@ static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_border  },
-	[SchemeHid]  = { col_cyan,  col_gray1, col_border  },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
+	[SchemeHid]  = { col_cyan,  col_gray1, col_gray2  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -113,18 +113,10 @@ static Key keys[] = {
 	{ MODKEY,              XK_d,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,   	       XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
-	//{ MODKEY|ShiftMask,    XK_w,                    spawn,          {.v = setqwertycmd } },
-	//{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
-	{ MODKEY|ControlMask,    XK_p,                    spawn,          {.v = suspendcmd } },
-	//{ MODKEY|ControlMask,  XK_s,                    spawn,          {.v = sktogglecmd } },
-	//{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = screenlockcmd } },
-	//{ MODKEY|ControlMask,  XK_k,                    spawn,          {.v = kctogglecmd } },
+	{ MODKEY|ControlMask,  XK_p,                    spawn,          {.v = suspendcmd } },
 	{ ShiftMask,           XK_F2,                   spawn,          {.v = downvol } },
 	{ ShiftMask,           XK_F1,                   spawn,          {.v = mutevol } },
 	{ ShiftMask,           XK_F3,                   spawn,          {.v = upvol   } },
-	//{ MODKEY,              XK_bracketleft,          spawn,          {.v = downvol } },
-	//{ MODKEY,              XK_backslash,            spawn,          {.v = mutevol } },
-	//{ MODKEY,              XK_bracketright,         spawn,          {.v = upvol   } },
 	{ MODKEY,              XK_b,                    spawn,          {.v = wpcmd } },
 	{ ShiftMask,           XK_F4,                   spawn,          {.v = decbacklightcmd } },
 	{ ShiftMask,           XK_F5,                   spawn,          {.v = incbacklightcmd } },
@@ -147,7 +139,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_o,                    restoreotherwins, {0}},
 	{ MODKEY|ShiftMask,    XK_Return,               zoom,           {0} },
 	{ MODKEY,              XK_Tab,                  view,           {0} },
-	{ MODKEY|ControlMask,  XK_q,                    killclient,     {0} },
+	{ MODKEY|ShiftMask,    XK_q,                    killclient,     {0} },
 	{ MODKEY,              XK_t,                    setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,              XK_m,                    setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,    XK_f,                    fullscreen,     {0} },
@@ -169,7 +161,7 @@ static Key keys[] = {
 	TAGKEYS(               XK_7,                      6)
 	TAGKEYS(               XK_8,                      7)
 	TAGKEYS(               XK_9,                      8)
-	{ MODKEY|ShiftMask,  XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask,  XK_q,      quit,           {0} },
 };
 
 /* button definitions */
