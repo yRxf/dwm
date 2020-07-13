@@ -69,7 +69,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -98,12 +98,14 @@ static const char *suspendcmd[]  = { "/home/xm/scripts/suspend.sh", NULL };
 static const char *incbacklightcmd[]  = { "/home/xm/scripts/inc-backlight.sh", NULL};
 static const char *decbacklightcmd[]  = { "/home/xm/scripts/dec-backlight.sh", NULL};
 
+static const char *show_todo[]  = { "/home/xm/scripts/show_todo.sh", NULL};
+
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_d,                    spawn,          {.v = dmenucmd } },
-	{ MODKEY,   	       XK_Return,               spawn,          {.v = termcmd } },
+  { MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
 	{ MODKEY|ControlMask,  XK_p,                    spawn,          {.v = suspendcmd } },
 	{ ShiftMask,           XK_F2,                   spawn,          {.v = downvol } },
@@ -113,6 +115,7 @@ static Key keys[] = {
 	{ ShiftMask,           XK_F4,                   spawn,          {.v = decbacklightcmd } },
 	{ ShiftMask,           XK_F5,                   spawn,          {.v = incbacklightcmd } },
 	{ MODKEY|ShiftMask,    XK_p,                    spawn,          {.v = screenshotcmd } },
+	{ MODKEY|ShiftMask,    XK_d,                    spawn,          {.v = show_todo} },
 	{ MODKEY|ShiftMask,    XK_j,                    rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = -1 } },
 	{ MODKEY,              XK_j,                    focusstack,     {.i = +1 } },
