@@ -84,6 +84,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
+static const char *musiccmd[]  = { "netease-cloud-music", NULL };
+static const char *steamcmd[]  = { "steam", NULL };
 
 static const char *upvol[]   = { "/home/xm/scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/xm/scripts/vol-down.sh",  NULL };
@@ -107,6 +109,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_d,                    spawn,          {.v = dmenucmd } },
   { MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
+	{ MODKEY,              XK_s,                    spawn,          {.v = steamcmd } },
 	{ MODKEY|ControlMask,  XK_p,                    spawn,          {.v = suspendcmd } },
 	{ ShiftMask,           XK_F2,                   spawn,          {.v = downvol } },
 	{ ShiftMask,           XK_F1,                   spawn,          {.v = mutevol } },
@@ -135,8 +138,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_Return,               zoom,           {0} },
 	{ MODKEY,              XK_Tab,                  view,           {0} },
 	{ MODKEY|ShiftMask,    XK_q,                    killclient,     {0} },
-	{ MODKEY,              XK_t,                    setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,              XK_m,                    setlayout,      {.v = &layouts[2]} },
+//	{ MODKEY,              XK_t,                    setlayout,      {.v = &layouts[0]} },
+//	{ MODKEY,              XK_m,                    setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,              XK_m,                    spawn,          {.v = musiccmd } },
 	{ MODKEY|ShiftMask,    XK_f,                    fullscreen,     {0} },
 	{ MODKEY,              XK_space,                setlayout,      {0} },
 	{ MODKEY|ShiftMask,    XK_space,                togglefloating, {0} },
